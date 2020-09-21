@@ -38,6 +38,12 @@ target_link_libraries(main PRIVATE ${LIBRARY_NAME})  # Link the executable to li
 You can find the example source code that builds the `main` executable in [app/main.cpp](app/main.cpp) under the `Build` section in [CMakeLists.txt](CMakeLists.txt). 
 If the executable you made does not use the library in [src/](src), then only the first line is needed.
 
+## Setup
+Make sure to initialize submodule before going further.
+
+``` bash
+git submodule update --init --recursive
+```
 
 
 ## Building

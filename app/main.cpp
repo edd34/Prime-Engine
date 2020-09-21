@@ -10,14 +10,18 @@
 #include <stdlib.h>
 
 #include "exampleConfig.h"
-#include "example.h"
+#include "prime.h"
 
 /*
  * Simple main program that demontrates how access
  * CMake definitions (here the version number) from source code.
  */
+
+long n_th_prime(int n);
+void print_res(int n);
+
 int main() {
-  std::cout << "C++ Boiler Plate v"
+  std::cout << "C++ Prime Engine v"
             << PROJECT_VERSION_MAJOR
             << "."
             << PROJECT_VERSION_MINOR
@@ -26,10 +30,25 @@ int main() {
             << "."
             << PROJECT_VERSION_TWEAK
             << std::endl;
-  std::system("cat ../LICENSE");
 
-  // Bring in the dummy class from the example source,
-  // just to show that it is accessible from main.cpp.
-  Dummy d = Dummy();
-  return d.doSomething() ? 0 : -1;
+  print_res(42);
+
+  return 0;
+}
+
+void print_res(int n) {
+  std::cout << "Le " << n << "ième nombre premier est " << n_th_prime(n) << std::endl;
+}
+
+long n_th_prime(int n) {
+  int cpt = 0;
+  int i = 0;
+  while(cpt != n) {
+    i += 1;
+    if(is_prime(i)) {
+      cpt += 1;
+      //std::cout << i << " " << cpt << std::endl;
+    }
+  }
+  return i;
 }

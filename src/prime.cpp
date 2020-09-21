@@ -2,6 +2,14 @@
 #include <iostream>
 #include <math.h>
 
+
+/**
+ * \fn bool is_prime (int)
+ * \brief Tells if the given number in arg is prime or not
+ *
+ * \return bool : result
+ */
+
 bool is_prime(int n) 
 { 
     if(n < 2) 
